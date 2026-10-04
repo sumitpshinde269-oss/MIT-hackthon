@@ -1,9 +1,12 @@
 const express = require('express');
 const router = express.Router();
+const {
+  getSuppliers,
+  getSupplierById,
+} = require('../controllers/supplierController');
 
-// Placeholder routes for suppliers
-router.get('/', (req, res) => {
-  res.json({ success: true, data: [] });
-});
+// Supplier routes
+router.get('/', getSuppliers);
+router.get('/:id', getSupplierById);
 
 module.exports = router;

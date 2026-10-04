@@ -1,15 +1,8 @@
 const express = require('express');
 const router = express.Router();
+const { getDashboardSummary } = require('../controllers/dashboardController');
 
-// Placeholder routes for dashboard metrics
-router.get('/', (req, res) => {
-  res.json({
-    success: true,
-    data: {
-      totalReceivable: 0,
-      totalPayable: 0,
-    },
-  });
-});
+// GET /api/dashboard/summary
+router.get('/summary', getDashboardSummary);
 
 module.exports = router;
